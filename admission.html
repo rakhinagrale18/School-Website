@@ -1,0 +1,207 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMORA INTERNATIONAL SCHOOL | School Admission</title>
+    <link rel="icon" type="image/png" href="admini.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="ad2css.css">
+    </link>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <img src="adlogo.png" alt="logo">
+            &nbsp; LUMORA <br>&nbsp; INTERNATIONAL <br> &nbsp; SCHOOL
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="academics.html">ACADEMICS</a></li>
+                <li><a href="admission.html">ADMISSIONS</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="signup.html">SIGN UP</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Hero -->
+
+    <section class="hero">
+        <div class="overlay">
+            <div class="hero-content">
+
+                <h1>School Admissions Open 2026-27</h1>
+
+                <p>Join our vibrant learning community where students excel academically, socially, and creatively.</p>
+
+                <a href="#form" class="btn">Apply Now</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+
+    <section id="process">
+
+        <h2 class="title">Admission Process</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Step 1</h3>
+                <p>Complete the online admission application form with accurate student information.</p>
+            </div>
+
+            <div class="card">
+                <h3>Step 2</h3>
+                <p>Submit required documents including birth certificate, previous report cards, and photographs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Step 3</h3>
+                <p>Attend an interaction session or entrance assessment based on the grade level.</p>
+            </div>
+
+            <div class="card">
+                <h3>Step 4</h3>
+                <p>Receive admission confirmation and complete the fee payment process.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Eligibility -->
+
+    <section id="eligibility">
+
+        <h2 class="title">Eligibility Criteria</h2>
+
+        <div class="eligibility">
+
+            <img src="https://plus.unsplash.com/premium_photo-1682787494765-44d02d12f5be">
+
+            <div>
+
+                <ul>
+
+                    <li>Minimum age requirement according to grade level.</li>
+
+                    <li>Previous academic records (where applicable).</li>
+
+                    <li>Valid Birth Certificate.</li>
+
+                    <li>Passport-size photographs.</li>
+
+                    <li>Transfer Certificate (for higher classes).</li>
+
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Form -->
+
+    <section id="form">
+
+        <h2 class="title">Admission Form</h2>
+
+        <div class="form-container">
+
+            <form action="submit.html">
+
+                <input type="text" placeholder="Student Name" required>
+
+                <input type="date" required>
+
+                <select required>
+
+                    <option>Select Grade</option>
+
+                    <option>Nursery</option>
+
+                    <option>LKG</option>
+
+                    <option>UKG</option>
+
+                    <option>Grade 1</option>
+
+                    <option>Grade 2</option>
+
+                    <option>Grade 3</option>
+
+                    <option>Grade 4</option>
+
+                    <option>Grade 5</option>
+
+                    <option>Grade 6</option>
+
+                    <option>Grade 7</option>
+
+                    <option>Grade 8</option>
+
+                    <option>Grade 9</option>
+
+                    <option>Grade 10</option>
+
+                </select>
+
+                <input type="text" placeholder="Parent Name" required>
+
+                <input type="email" placeholder="Parent's Email Address" required>
+
+                <input type="tel" placeholder="Parent's Phone Number" required>
+
+                <textarea placeholder="Address / Additional Information"></textarea>
+
+                <button type="submit">Submit Application</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>© 2025 LUMORA INTERNATIONAL SCHOOL. All Rights Reserved.</p>
+
+    </footer>
+
+    <script>
+
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("active");
+        }
+
+    </script>
+
+</body>
+
+</html>
