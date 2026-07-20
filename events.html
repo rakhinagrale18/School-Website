@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lumora International School | Upcoming Events</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <header class="navbar">
+            <div class="logo">
+                <img src="logoeve.png">
+                <h4>LUMORA <br>
+                    INTERNATIONAL
+                    <br> SCHOOL</h4>
+            </div>
+ <button class="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" id="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="academics.html">ACADEMICS</a>
+            <a href="admission.html">ADMISSIONS</a>
+            <a href="events.html">EVENTS </a>
+            <a href="contact.html">CONTACT US</a>
+            <a href="login.html">LOGIN</a>
+            <a href="signup.html">SIGNUP</a>
+            </nav>
+        </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <p class="eyebrow">Upcoming Events</p>
+                <h1>Exciting activities are coming up for our students.</h1>
+                <p>From academic challenges to cultural celebrations, there is always something meaningful to look forward to at our school.</p>
+                <a href="#events" class="btn">View Events</a>
+            </div>
+
+            <div class="hero-card">
+                <p class="card-label">Next Highlight</p>
+                <h2>Science Fair & Innovation Expo</h2>
+                <p class="date">25 July 2026</p>
+                <p>Students will present creative projects and showcase real-world solutions.</p>
+            </div>
+        </section>
+
+        <section id="events" class="events-section container">
+            <div class="section-heading">
+                <p class="eyebrow">This Month</p>
+                <h2>School Events Calendar</h2>
+                <p>Plan ahead and join the moments that matter most.</p>
+            </div>
+
+            <div class="event-grid">
+                <article class="event-card">
+                    <span class="tag">Academic</span>
+                    <h3>Math Olympiad</h3>
+                    <p>Challenge yourself with problem-solving and friendly competition.</p>
+                    <div class="event-meta">
+                        <span>12 Aug</span>
+                        <span>10:00 AM</span>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <span class="tag">Culture</span>
+                    <h3>Annual Cultural Day</h3>
+                    <p>Enjoy music, dance, food, and traditions from around the world.</p>
+                    <div class="event-meta">
+                        <span>18 Aug</span>
+                        <span>09:30 AM</span>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <span class="tag">Sports</span>
+                    <h3>Inter-House Sports Meet</h3>
+                    <p>Cheer for your house and enjoy a day of energetic school spirit.</p>
+                    <div class="event-meta">
+                        <span>22 Aug</span>
+                        <span>08:00 AM</span>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <span class="tag">Community</span>
+                    <h3>Charity Drive</h3>
+                    <p>Take part in a meaningful event that gives back to the community.</p>
+                    <div class="event-meta">
+                        <span>28 Aug</span>
+                        <span>11:00 AM</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+<footer>
+        <p>&copy; Lumora International School. All rights reserved.</p>
+    </footer>
+    <script>const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+}
+</script>
+</body>
+</html>
