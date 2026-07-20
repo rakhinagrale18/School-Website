@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMORA INTERNATIONAL SCHOOL</title>
+
+      <style>
+
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Arial';
+        }
+
+        body{
+          line-height: 1.6;
+          color: #333;
+          overflow-x: hidden;
+        }
+
+          .navbar {
+                background-color: #0d47a1;
+                color: white;
+                padding: 15px 60px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: sticky;
+                top:0;
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                min-height:100px;
+                flex-wrap: wrap;
+            }
+
+            .navbar .logo {
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                padding-left: 0;
+                gap:10px;
+                
+            }
+
+            .logo img {
+                height: 70px;
+                width: 70px;
+                gap: 20px;
+            }
+
+            .navbar nav {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+            }
+
+            .navbar nav a {
+                color: white;
+                text-decoration: none;
+                margin-left: 0;
+                font-weight: 700;
+                font-size: 18px;
+                transition: 0.3s;
+            }
+
+            .navbar nav a:hover {
+                color: #ffca28;
+            }
+
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background: white;
+                border-radius: 2px;
+                transition: 0.3s ease;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+        .hero{
+          background:url('https://plus.unsplash.com/premium_photo-1681843661864-3f46bfb1a4fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhlcm8lMjBiYWNrZ3JvdW5kJTIwZm9yJTIwc2Nob29sfGVufDB8fDB8fHww')no-repeat;
+          background-size: cover;
+          background-position: center;
+          min-height: 70vh;
+          width: 100%;
+          padding: 100px 20px 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+
+        .hero h1{
+          font-size: 45px;
+          margin-bottom: 10px;
+          color: rgb(43, 238, 26);
+          padding-top: 0;
+        }
+
+        
+        .hero h2 {
+          font-size: 33px;
+          color:rgb(236, 12, 12);
+          margin-bottom: 20px;
+          padding-top: 0;
+          font-weight: 600;
+        }
+
+        .hero p{
+          font-size: 25px;
+          color: rgb(44, 25, 218);
+          max-width: 800px;
+        }
+
+        .classes{
+          background: linear-gradient(rgba(150, 4, 4, 0.6),rgba(128, 103, 240, 0.7));
+          padding: 50px 8%;
+        }
+
+        .classes h2{
+          font-size: 30px;
+          text-align: center;
+          color: #0f0230;
+          padding-top: 20px;
+        }
+
+        .classes p{
+          font-size: 17px;
+          color: #f3f706;
+          text-align: center;
+        }
+
+        .class-grid{
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 20px;
+          padding-top: 10px;
+          align-items: stretch;
+        }
+
+        .class-card{
+          padding: 12px;
+          background: linear-gradient(rgba(2,3,4,0.8),rgba(88, 161, 54, 0.8));
+          width: 100%;
+          max-width: 400px;
+          margin: 0 auto;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .class-card img{
+          width:100%;
+          height: 250px;
+          object-fit: cover;
+          border-radius: 10px;
+          text-decoration: none;
+        }
+
+        .class-card a{
+          text-decoration: none;
+        }
+
+        .class-card h3 {
+          color: #02085c;
+          text-align: center;
+          text-decoration: none;
+        }
+
+          .class-card p {
+          color: #f3ef08;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        .class-card span {
+          color: #080808;
+          text-align: center;
+          display: block;
+          padding-left: 0;
+          margin-top: 8px;
+          text-decoration: none;
+        }
+
+        .about{
+          padding: 60px 8%;
+          text-align: center;
+          background:linear-gradient(rgba(113, 179, 83, 0.5),rgba(204, 213, 230, 0.5));
+        }
+
+        .about h2{
+          font-size: 29px;
+          color: #0d47a1;
+          margin-bottom: 20px;
+        }
+        
+        .about p{
+          max-width: 800px;
+          margin:auto;
+          font-size: 16px;
+        }
+
+          .teaching-section{
+          background: linear-gradient(rgba(113, 179, 83, 0.5), rgba(204, 213, 230, 0.5));
+          padding: 60px 8%;
+        }
+
+        .teaching-section h2{
+          font-size: 30px;
+          text-align: center;
+          padding-top: 10px;
+          margin-bottom: 20px;
+        }
+
+        .teaching-grid{
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 30px;
+          align-items: start;
+          padding-top: 15px;
+        }
+
+        .teaching-card{
+          width: 100%;
+          max-width: 350px;
+          margin: 0 auto;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+          transition: transform 0.4s ease-in-out;
+          background: #fff;
+        }
+
+        .teaching-card:hover {
+          transform: translateY(-8px);
+        }
+
+        .teaching-card img{
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          display: block;
+        }
+
+        .teaching-card h3{
+          padding: 10px;
+          text-align: center;
+          font-size: 15px;
+        }
+
+        .teaching-card p{
+          color: rgb(41, 5, 75);
+          font-size: 16px;
+          text-align: center;
+          padding: 0 12px 16px;
+        }
+
+
+    
+        .principal{
+          background: linear-gradient(rgba(233, 229, 14, 0.7),rgba(216, 215, 212, 0));
+          padding: 60px 8%;
+          width: auto;
+        
+        }
+
+        .principal-grid{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .principal-card{
+          width: 100%;
+          max-width: 350px;
+          height: auto;
+          margin: 0 auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+          transition: transform 0.4s ease-in-out; 
+          overflow: hidden;
+          background: rgba(255,255,255,0.85);
+          padding-bottom: 12px;
+        }
+
+        .principal-card:hover{
+           transform: translateY(-18px); 
+        }
+
+      
+
+      .principal-card img{
+        width:100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+      }
+
+      .principal-card h4{
+        padding: 10px;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      .principal-card h2{
+        color: green;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .principal-card p{
+        color: blueviolet;
+        font-size: 16px;
+        text-align: center;
+      }
+
+
+
+
+        .facts{
+          background: #f5f5f5;
+          padding: 60px 8%;
+        }
+
+        .facts h2{
+            text-align: center;
+            font-size: 20px;
+            color: #0d47a1;
+            margin-bottom: 40px;
+
+        }
+
+        .grid{
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap:30px;
+        }
+
+        .card{
+          background: rgb(140, 149, 230);
+          padding: 30px;
+          text-align: center;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+           transform: transition 0.4s ease-in-out;
+        }
+
+        .card img{
+          width: 90px;
+          height: 90px;
+        }
+
+        .card:hover{
+          transform: translateY(-9px);
+        }
+
+        .card h3{
+          font-size: 23px;
+          color: #0d47a1;
+          margin-bottom: 10px;
+        }
+
+        .card p{
+          font-weight: 600;
+        }
+
+        .contact{
+          padding: 60px 8%;
+          text-align: center;
+           background:linear-gradient(rgba(172, 79, 235, 0.5),rgba(204, 213, 230, 0.5));
+        }
+
+        .contact h2{
+          font-size: 24px;
+          color: rgb(10, 10, 1);
+          margin-bottom: 20px;
+        }
+
+        .contact-grid{
+          display: grid;
+           grid-template-columns: repeat(3, 1fr);
+          gap:30px;
+        }
+
+        .contact-card{
+          background: #0d47a1;
+          box-shadow: rgba(0,0,0,0.8);
+          border-radius: 10px;
+          padding: 30px 8%;
+          transform: transition 0.4s ease-in-out;
+        }
+
+        .contact-card:hover{
+          transform: translateY(-10px);
+        }
+
+        .contact-card img{
+          width: 80px;
+          height: 80px;
+        }
+
+        .contact p{
+          font-size: 14px;
+          margin: 8px 0;
+          color: aliceblue;
+        }
+
+        footer{
+          background: #0d47a1;
+          color: #f5f5f5;
+          text-align: center;
+          padding: 20px;
+          margin-top: 40px;
+        }
+
+        @media(max-width:1024px){
+          .grid{grid-template-columns: repeat(2,1fr);}
+
+          .navbar {
+            position: sticky;
+            padding: 15px 25px;
+          }
+
+          .hamburger {
+            display: flex;
+          }
+
+          .navbar nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            background-color: #0d47a1;
+            padding: 20px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            z-index: 1001;
+          }
+
+          .navbar nav.active {
+            display: flex;
+          }
+
+          .navbar nav a {
+            margin: 10px 0;
+            text-align: center;
+          }
+
+          .hero h1 {
+            font-size: 2.4rem;
+          }
+
+          .hero h2 {
+            font-size: 1.8rem;
+          }
+
+          .hero p {
+            font-size: 1.1rem;
+          }
+
+          .class-grid,
+          .teaching-grid,
+          .principal-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .contact-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        @media(max-width:768px){
+          .navbar {
+            padding: 12px 16px;
+            min-height: auto;
+          }
+
+          .navbar .logo {
+            font-size: 14px;
+          }
+
+          .logo img {
+            height: 50px;
+            width: 50px;
+          }
+
+          .hero {
+            min-height: 60vh;
+            padding: 80px 16px 50px;
+          }
+
+          .hero h1 {
+            font-size: 2rem;
+          }
+
+          .hero h2 {
+            font-size: 1.4rem;
+          }
+
+          .hero p {
+            font-size: 1rem;
+          }
+
+          .about p {
+            font-size: 15px;
+          }
+
+          .grid,
+          .class-grid,
+          .teaching-grid,
+          .principal-grid,
+          .contact-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .classes,
+          .teaching-section,
+          .principal,
+          .facts,
+          .contact {
+            padding: 40px 16px;
+          }
+
+          .class-card,
+          .teaching-card,
+          .principal-card,
+          .card,
+          .contact-card {
+            max-width: 100%;
+          }
+
+          .contact-card {
+            padding: 20px;
+          }
+
+          .card img {
+            width: 70px;
+            height: 70px;
+          }
+          
+        }
+
+
+        </style>
+
+    
+</head>
+<body>
+
+   <header class="navbar">
+            <div class="logo">
+                <img src="logo.png">
+                <h4>LUMORA <br>
+                    INTERNATIONAL
+                    <br> SCHOOL</h4>
+            </div>
+              <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav id="navMenu">
+            <a href="index.html">HOME</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="academics.html">ACADEMICS</a>
+            <a href="admission.html">ADMISSIONS</a>
+            <a href="events.html">EVENTS </a>
+            <a href="contact.html">CONTACT US</a>
+            <a href="login.html">LOGIN</a>
+            <a href="signup.html">SIGNUP</a>
+            </nav>
+        </header>
+
+  <!--hero section-->
+  <section class="hero">
+    <h1>ABOUT US</h1>
+    <h2>LUMORA INTERNATIONAL SCHOOL</h2>
+    <p>Shaping Future Leaders with Knowledge, Values and Innovations.</p>
+  </section>
+
+  <!--about info-->
+  <section class="about">
+    <h2>Our Story</h2>
+    <p>
+      Lumora International School was founded with a vision to provide world-class education that nurtures curiosity,creativity and character.
+      Over the years, we have built a learning environment where students are encouraged to excel academically while growing as responsible global citizens.
+      Oue experienced faculty, modern infrastructures, and focu on holistic development make us one of the leading schools in the region.
+    </p>
+  </section>
+
+  <!--Classes-->
+  <section class="classes">
+    <h2>CLASSES WE OFFER</h2>
+    <p>From Nursery to Grade 12- Nurturing Every Stage Of Learning.</p>
+ <div class="class-grid">
+
+  <div class="class-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB8uq3xpxwrZc61HuBeAeQ18yDDv-i6M4We0XJNTJxRQ&s=10">
+    <a href="admission.html"><h3>Nursery - UKG</h3><p>"Learning through play, colors, and stories. We build strong foundation with love and care."</p> <span>Age: 3-5 Years</span></a>
+ 
+</div>
+
+    <div class="class-card">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRxsHiaynqBrjwoL2obiA6v-fu5zHxjBe3f_ySsXgcEQ&s=10">
+    <a href="admission.html"><h3>Grade 1 - 5</h3><p>"Focus on basics, curiosity, and creativity, Activity-based learning for young minds."</p><span>Primary Wings</span></a>
+      
+  </div>
+
+  
+
+    <div class="class-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0UBLy8IP15tteEyN1yOmk7NqUiZiX6xvk1uQ3ZCRvpA&s=10">
+   <h3>Grade 6 - 10</h3><p>"Board preparation with strong fundamentals in science, Maths and Languages."</p><span>Secondary Wing</span></a>
+
+  </div>
+
+    <div class="class-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMAp1jk-4AqKXUT7unJ6CbN7VSN0Wbdiq8U5dHTK-AtA&s=10">
+    <a href="admission.html"><h3>Grade 11 - 12</h3><p>"Career focused education with Science, Commerce & Arts streams. Guidance for competitive exams."</p>  <span>Senior Secondary</span></a>
+    
+  </div>
+
+ </div>
+  </section>
+
+  <!--Teachings-->
+  <section class="teaching-section">
+    <h2>Our Teaching Techniques</h2>
+
+    <div class="teaching-grid">
+
+      <div class="teaching-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOUC7G4QfTz-3Oz4qCGD_TDQgBqbxOTbYzuC_2_kjrRA&s=10">
+        <h3>Smart Classrooms</h3>
+        <p>Interactive digital learning with audio-visual content for better understanding.</p>
+      </div>
+
+       <div class="teaching-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb-U0qrpDPkoUzhpgIqLLEEwEqjOlR5Oy2T0y1Q2Iy-g&s=10">
+        <h3>Activity Based Learning</h3>
+        <p>Hands-on experiments and projects to make concepts clear and memorable.</p>
+      </div>
+
+       <div class="teaching-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm6lSplyzR9c7JCk1vMUps4ixyJwUonk6n7UHvdlQPme9aAfaZY2HCNzpn&s=10">
+        <h3>Group Discussions</h3>
+        <p>Encouraging communications, teamworks, and critical thinking sklls.</p>
+      </div>
+
+       <div class="teaching-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT4Lrx2EbbTrQm484-_wfwP6WPvyvzj1sQMXI0f_9pWA&s=10">
+        <h3>Personal Mentoring</h3>
+        <p>One-on-one guidance for every student's academic and personal growth.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!--messgae-->
+
+  <section class="principal">
+    <div class="principal-grid">
+
+      <div class="principal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp18t7eTvlPR3BML-XovvYetQc6mcxBpbgp0rVfJOdGQ&s=10">
+    <h2>Message from Principal</h2>
+    <p>"At Lumora International School, we believe every child is unique. Our goal is to provide knpowledge,confidence and success..."</p>
+    <h4>-Mrs. Saxena, Principal</h4>
+    </div>
+
+    <div class="principal-card">
+    <img src="https://dikshantinternational.org/images/Our-Staff.jpg">
+    <h2>Message from Teachers</h2>
+    <p>"We are committed to guiding each student towards academic excellence and strong moral values. Together, let's build a bright future for our children."</p>
+    <h4>-Teaching Faculty (Lumora International School)</h4>
+    </div>
+
+    </div>
+  </section>
+
+  <!--facts-->
+
+  <section class="facts">
+    <h2>Why Choose Lumora?</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM8f3ZyZNumNMlXWoxoIXSi08C1qkiqXxRKN889edAWA&s=10">
+        <h3>15+</h3>
+        <p>Years Of Excellence</p>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQChDO-RpJQp6oVUD4HYx7cgtLMMlcerfV1Tl2LawSYAw&s=10">
+        <h3>2000+</h3>
+        <p>Students Enrolled</p>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9KNm87u2e6-exsWwb10W4AjxN4sRTdhcTNcnNWkfZUA&s=10">
+        <h3>50+</h3>
+        <p>Awards Won</p>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxCZWYkJULfYV7OnNymhnsyyhx5u1JLltL-B-lwhwMJw&s=10">
+        <h3>100+</h3>
+        <p>Expert Teachers</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!--Contact section-->
+
+  <section class="contact" id="contact">
+    <h2>GET IN TOUCH</h2>
+    <div class="contact-grid">
+
+      <a href="contact.html">
+      <div class="contact-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfV7O5gZ5RZ4Uv_aVTs69aAJD5SuhO-jeWaOC7tznCmw&s=10">
+    <p><b>Address:</b>Lumora International School</p>
+    </div>
+    </a>
+
+    <a href="contact.html">
+    <div class="contact-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMVD7ZunGyi-YsJG6Nwjl2CxsjeQltLevk46utX8j4xw&s=10">
+    <p><b>Phone:</b>+91 98765 43210</p>
+    </div>
+    </a>
+
+    <div class="contact-card">
+      <a href="contact.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRHsdU5i0sr5g8J3T-Xk5coVOyx6QOsw9URgIrtK33WA&s=10">
+    <p><b>Email:</b>info@lumoraschool.com</p>
+    </div>
+  </a>
+
+    </div>
+  </section>
+
+  <!--footer-->
+
+  <footer>
+    <p> &copy; 2026 Lumora International School. All Rights Reserved. </p>
+  </footer>
+
+  <script>
+     const hamburger = document.getElementById('hamburger');
+     const navMenu = document.getElementById('navMenu');
+
+     if (hamburger && navMenu) {
+       hamburger.addEventListener('click', () => {
+         hamburger.classList.toggle('active');
+         navMenu.classList.toggle('active');
+       });
+
+       document.querySelectorAll('#navMenu a').forEach(link => {
+         link.addEventListener('click', () => {
+           hamburger.classList.remove('active');
+           navMenu.classList.remove('active');
+         });
+       });
+     }
+  </script>
+
+    </body>
+    </html>
+    
