@@ -1,0 +1,1110 @@
+/*==================================================
+                GOOGLE FONT & RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#333;
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+section{
+    padding:60px 8%;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/*==================================================
+                    HEADER
+==================================================*/
+
+header{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+.navbar{
+    background-color:#0d47a1;
+    color:white;
+    padding:15px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    height:100px;
+}
+
+.navbar .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:18px;
+    /* Remove this line:
+       padding-left:-40px;
+       Negative padding is invalid in CSS */
+}
+
+.logo img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+}
+
+.logo h2{
+    color:#fff;
+    font-size:26px;
+    font-weight:700;
+    margin:0;
+}
+
+.logo span{
+    color:#ffca28;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    font-size:18px;
+    transition:.3s;
+}
+
+.nav-menu a:hover{
+    color:#ffca28;
+}
+
+.signup-btn{
+    background:#f8f7f6;
+    color:#0d47a1 !important;
+    padding:10px 22px;
+    border-radius:30px;
+}
+
+.signup-btn:hover{
+    background:#fff;
+    color:#0d47a1 !important;
+}
+
+.menu-toggle{
+    display:none;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
+
+/*==================================================
+                    HERO
+==================================================*/
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-overlay{
+    width:100%;
+}
+
+.hero-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:white;
+}
+
+.hero-tag{
+    display:inline-block;
+    padding:10px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(8px);
+    color:#f4c542;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+.hero h1{
+    font-size:65px;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:780px;
+    margin:auto;
+    margin-bottom:40px;
+    color:#f1f1f1;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    background:#f4c542;
+    color:#0a2a66;
+    padding:16px 38px;
+    border-radius:40px;
+    font-weight:600;
+    transition:.4s;
+}
+
+.primary-btn:hover{
+    transform:translateY(-5px);
+    background:#fff;
+}
+
+.secondary-btn{
+    border:2px solid #fff;
+    color:#fff;
+    padding:16px 38px;
+    border-radius:40px;
+    transition:.4s;
+}
+
+.secondary-btn:hover{
+    background:#fff;
+    color:#0a2a66;
+}
+/*==================================================
+            COMMON SECTION TITLE
+==================================================*/
+
+.section-title{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 35px;
+}
+
+.section-title span{
+    display:inline-block;
+    color:#0a2a66;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    background:#e8eefc;
+    padding:8px 20px;
+    border-radius:30px;
+    margin-bottom:18px;
+}
+
+.section-title h2{
+    font-size:44px;
+    color:#0a2a66;
+    margin-bottom:20px;
+}
+
+.section-title p{
+    font-size:18px;
+    color:#666;
+    line-height:1.8;
+}
+
+/*==================================================
+                CURRICULUM
+==================================================*/
+
+.curriculum{
+    background:#fff;
+}
+
+.curriculum-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.curriculum-card{
+    background:#fff;
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.4s;
+    border-top:5px solid transparent;
+}
+
+.curriculum-card:hover{
+    transform:translateY(-12px);
+    border-color:#f4c542;
+    box-shadow:0 25px 55px rgba(0,0,0,.15);
+}
+
+.curriculum-card .icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:#0a2a66;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.curriculum-card .icon i{
+    color:#fff;
+    font-size:38px;
+}
+
+.curriculum-card h3{
+    color:#0a2a66;
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.curriculum-card p{
+    color:#666;
+    line-height:1.9;
+    font-size:16px;
+}
+
+/*==================================================
+                SUBJECTS
+==================================================*/
+
+.subjects{
+    background:#f7f9fd;
+}
+
+.subjects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.subject-card{
+    background:#fff;
+    border-radius:18px;
+    padding:35px 25px;
+    text-align:center;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    cursor:pointer;
+}
+
+.subject-card:hover{
+    transform:translateY(-10px);
+    background:#0a2a66;
+}
+
+.subject-card i{
+    font-size:50px;
+    color:#f4c542;
+    margin-bottom:22px;
+    transition:.3s;
+}
+
+.subject-card h3{
+    color:#0a2a66;
+    margin-bottom:15px;
+    transition:.3s;
+    font-size:24px;
+}
+
+.subject-card p{
+    color:#666;
+    transition:.3s;
+    line-height:1.8;
+}
+
+.subject-card:hover h3,
+.subject-card:hover p{
+    color:#fff;
+}
+
+.subject-card:hover i{
+    transform:scale(1.2);
+}
+
+/*==================================================
+            SUBJECT CARD ANIMATION
+==================================================*/
+
+.subject-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.subject-card::before{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    border-radius:50%;
+    background:rgba(244,197,66,.15);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    transition:.6s;
+}
+
+.subject-card:hover::before{
+    width:450px;
+    height:450px;
+}
+
+/*==================================================
+            CURRICULUM ICON EFFECT
+==================================================*/
+
+.curriculum-card:hover .icon{
+    transform:rotate(360deg);
+    transition:.8s;
+}
+
+/*==================================================
+            SECTION SPACING
+==================================================*/
+
+.curriculum,
+.subjects{
+    padding-top:90px;
+    padding-bottom:90px;
+}
+/*=========================================
+        FACULTY SECTION
+=========================================*/
+
+.faculty{
+    background:#ffffff;
+}
+
+.faculty-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.faculty-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.faculty-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+.faculty-card img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.faculty-card:hover img{
+    transform:scale(1.08);
+}
+
+.faculty-content{
+    padding:30px;
+    text-align:center;
+}
+
+.faculty-content h3{
+    color:#0a2a66;
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.faculty-content span{
+    display:block;
+    color:#f4b400;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.faculty-content p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.profile-btn{
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:#0a2a66;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.profile-btn:hover{
+    background:#f4c542;
+    color:#0a2a66;
+}
+
+/*=========================================
+      LEARNING SECTION
+=========================================*/
+
+.learning{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+    background:#f8faff;
+}
+
+.learning-image img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.learning-content span{
+    color:#f4b400;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.learning-content h2{
+    color:#0a2a66;
+    font-size:42px;
+    margin:15px 0 25px;
+}
+
+.learning-content p{
+    line-height:1.9;
+    color:#555;
+    margin-bottom:30px;
+}
+
+.feature-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.feature{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:500;
+}
+
+.feature i{
+    color:#1fb655;
+    font-size:18px;
+}
+
+.learn-btn{
+    background:#0a2a66;
+    color:#fff;
+    padding:14px 35px;
+    border:none;
+    border-radius:35px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.learn-btn:hover{
+    background:#f4c542;
+    color:#0a2a66;
+}
+
+/*=========================================
+        ACHIEVEMENTS
+=========================================*/
+
+.achievements{
+    background:#0a2a66;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.achievement-box{
+    color:#fff;
+    padding:35px 20px;
+}
+
+.achievement-box i{
+    font-size:55px;
+    color:#f4c542;
+    margin-bottom:20px;
+}
+
+.achievement-box h3{
+    font-size:46px;
+    margin-bottom:10px;
+}
+
+.achievement-box p{
+    color:#f2f2f2;
+    font-size:18px;
+}
+
+/*=========================================
+        EXTRA HOVER EFFECTS
+=========================================*/
+
+.curriculum-card,
+.subject-card,
+.faculty-card,
+.achievement-box{
+    transition:.4s ease;
+}
+
+.curriculum-card:hover,
+.subject-card:hover,
+.faculty-card:hover{
+    transform:translateY(-10px);
+}
+
+.learn-btn,
+.profile-btn{
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+/*=========================================
+        IMAGE BORDER
+=========================================*/
+
+.learning-image{
+    position:relative;
+}
+
+.learning-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    border:4px solid #f4c542;
+
+    border-radius:25px;
+
+    top:18px;
+
+    left:18px;
+
+    z-index:-1;
+
+}
+/*=========================================
+        WHY CHOOSE US
+=========================================*/
+
+.why-choose{
+    background:#ffffff;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.why-card{
+    background:#f8faff;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.why-card:hover{
+    background:#0a2a66;
+    transform:translateY(-10px);
+}
+
+.why-card i{
+    font-size:50px;
+    color:#f4c542;
+    margin-bottom:20px;
+}
+
+.why-card h3{
+    color:#0a2a66;
+    margin-bottom:15px;
+    transition:.3s;
+}
+
+.why-card p{
+    color:#666;
+    line-height:1.8;
+    transition:.3s;
+}
+
+.why-card:hover h3,
+.why-card:hover p{
+    color:#fff;
+}
+
+/*=========================================
+        TESTIMONIALS
+=========================================*/
+
+.testimonials{
+    background:#eef4fb;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.testimonial-card{
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-8px);
+}
+
+.testimonial-card p{
+    font-style:italic;
+    margin-bottom:20px;
+    line-height:1.9;
+}
+
+.testimonial-card h4{
+    color:#0a2a66;
+}
+
+/*=========================================
+        CTA
+=========================================*/
+
+.cta{
+    background:linear-gradient(135deg,#0a2a66,#163c8c);
+    color:#fff;
+    text-align:center;
+}
+
+.cta-content{
+    max-width:800px;
+    margin:auto;
+}
+
+.cta h2{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    color:#f3f3f3;
+    margin-bottom:35px;
+    line-height:1.8;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/*=========================================
+        FOOTER
+=========================================*/
+
+footer{
+    background:#071a44;
+    color:#fff;
+    padding:70px 8% 30px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:40px;
+}
+
+.footer-box h2,
+.footer-box h3{
+    margin-bottom:20px;
+}
+
+.footer-box p{
+    color:#ddd;
+    margin-bottom:12px;
+    line-height:1.8;
+}
+
+.footer-box a{
+    display:block;
+    color:#ddd;
+    margin-bottom:12px;
+    transition:.3s;
+}
+
+.footer-box a:hover{
+    color:#f4c542;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#163c8c;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#f4c542;
+    color:#0a2a66;
+}
+
+footer hr{
+    margin:40px 0 20px;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.copyright{
+    text-align:center;
+    color:#ddd;
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.hero h1{
+    font-size:48px;
+}
+
+.learning{
+    grid-template-columns:1fr;
+}
+
+.feature-list{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-menu{
+    position:fixed;
+    top:90px;
+    left:-100%;
+    width:100%;
+    background:#0a2a66;
+    flex-direction:column;
+    padding:30px 0;
+    gap:25px;
+    transition:.4s;
+}
+
+.nav-menu.active{
+    left:0;
+}
+
+.hero{
+    height:85vh;
+}
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.section-title h2{
+    font-size:32px;
+}
+
+.cta h2{
+    font-size:34px;
+}
+
+.logo h2{
+    font-size:20px;
+}
+
+.logo span{
+    font-size:11px;
+}
+
+}
+
+@media(max-width:576px){
+
+section{
+    padding:70px 6%;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.hero-buttons,
+.cta-buttons{
+    flex-direction:column;
+}
+
+.primary-btn,
+.secondary-btn,
+.learn-btn,
+.profile-btn{
+    width:100%;
+    text-align:center;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+}
+
+.curriculum-card,
+.subject-card,
+.why-card,
+.testimonial-card{
+    padding:28px 20px;
+}
+
+.learning-content h2{
+    font-size:30px;
+}
+
+.achievement-box h3{
+    font-size:36px;
+}
+
+.footer-container{
+    text-align:center;
+}
+
+.social-icons{
+    justify-content:center;
+}
+
+}
+/*==================================================
+        CURRICULUM INFORMATION BOXES
+==================================================*/
+
+.curriculum-info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.info-box{
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.info-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.info-box i{
+    font-size:55px;
+    color:#0a2a66;
+    margin-bottom:20px;
+}
+
+.info-box h3{
+    color:#0a2a66;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.info-box p{
+    color:#666;
+    line-height:1.8;
+}
+
+/*==================================================
+            TABLE DESIGN
+==================================================*/
+
+.curriculum-table,
+.timetable,
+.faculty-directory{
+    background:#f8fbff;
+}
+
+.table-responsive{
+    overflow-x:auto;
+}
+
+.curriculum-table table,
+.schedule-table,
+.faculty-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.curriculum-table th,
+.curriculum-table td,
+.schedule-table th,
+.schedule-table td,
+.faculty-table th,
+.faculty-table td{
+
+    padding:18px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+
+}
+
+.curriculum-table th,
+.schedule-table th,
+.faculty-table th{
+
+    background:#0a2a66;
+    color:#fff;
+    font-size:17px;
+
+}
+
+.curriculum-table tbody tr:hover,
+.schedule-table tbody tr:hover,
+.faculty-table tbody tr:hover{
+
+    background:#eef5ff;
+
+}
+
+.curriculum-table td,
+.schedule-table td,
+.faculty-table td{
+
+    color:#555;
+
+}
+
+/*==================================================
+        BREAK ROW
+==================================================*/
+
+.break-row{
+
+    background:#ffe9a8 !important;
+    font-weight:600;
+
+}
+
+.break-row td{
+
+    color:#0a2a66;
+
+}
+
+/*==================================================
+        FACULTY TABLE
+==================================================*/
+
+.faculty-table tbody tr td:first-child{
+
+    font-weight:600;
+    color:#0a2a66;
+
+}
+
+/*==================================================
+        RESPONSIVE TABLE
+==================================================*/
+
+@media(max-width:768px){
+
+.curriculum-table table,
+.schedule-table,
+.faculty-table{
+
+    min-width:900px;
+
+}
+
+}
