@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <style>
+
+            * {
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body {
+                background-color: #fff;
+                color: #333;
+            }
+
+            .navbar {
+                background-color: #0d47a1;
+                color: white;
+                padding: 15px 60px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: sticky;
+                top:0;
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                height:100px;
+                overflow: visible;
+            }
+
+            .navbar .logo {
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+               padding-left: -40px;
+                gap:10px;
+                
+            }
+
+            .logo img {
+                height: 70px;
+                width: 70px;
+                gap: 20px;
+            }
+
+            .nav-menu {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .navbar nav a {
+                color: white;
+                text-decoration: none;
+                margin-left: 0;
+                font-weight: 700;
+                font-size: 18px;
+                transition: 0.3s;
+            }
+
+            .navbar nav a:hover {
+                color: #ffca28;
+            }
+
+            .hero {
+                background: linear-gradient(rgba(13,71,161,0.7),rgba(13,71,161,0.7)),url('https://st2.depositphotos.com/2001403/11132/i/450/depositphotos_111329274-stock-photo-back-to-school-website-header.jpg') no-repeat center/cover;
+                color:white;
+                text-align: center;
+                padding: 120px 20px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+                margin-bottom: 15px;
+            }
+
+            .hero p {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .btn {
+                background-color: #ff6f00;
+                color:white;
+                padding: 14px 35px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 16px;
+                transition: 0.3s;
+            }
+
+            .btn:hover {
+                background-color: #e65c00;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 80px auto;
+                padding: 0 20px;
+            }
+
+            .section-title {
+                text-align: center;
+                color: #0d47a1;
+                font-size: 36px;
+                margin-bottom: 15px;
+            }
+
+            .section-sub {
+                text-align: center;
+                color:#666;
+                margin-bottom: 15px;
+            }
+
+            .about {
+                display: flex;
+                gap: 40px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .about img {
+                flex:1;
+                min-width: 300px;
+                border-radius: 10px;
+            }
+
+            .about-text {
+                flex: 1.2;
+                min-width: 300px;
+            }
+
+            .about-text h3 {
+                color: #0d47a1;
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .features {
+                background-color: #f8f9fa;
+                padding: 80px 20px;
+            }
+
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .feature-card {
+                background-color: white;
+                padding: 30px;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+                border-top: 4px solid #ff6f00;
+                transition:0.3s;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-card h4 {
+                color:#0d47a1;
+                margin: 15px 0 10px;
+                font-size: 20px;
+            }
+
+            .classes-grid {
+                display:grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap:25px;
+            }
+
+            .class-card {
+                background-color: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            }
+
+            .class-card img {
+                width: 100%;
+                height:200px;
+                object-fit: cover;
+
+            }
+
+            .class-info {
+                padding:20px;
+            }
+
+            .class-info h4 {
+                color: #0d47a1;
+                margin-bottom: 8px;
+            }
+
+            .gallery {
+                background-color: #f8f9fa;
+                padding: 80px 20px;
+            }
+
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .gallery-grid img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+                transition: 0.3s;
+            }
+
+            .gallery-grid img:hover {
+                transform: scale(1.05);
+            }
+
+            .cta {
+                background: linear-gradient(#0d47a1, #1976d2);
+                color:white;
+                padding: 80px 20px;
+                text-align: center;
+            }
+
+            .cta p {
+              font-size: 18px;
+              margin-bottom: 30px;
+              max-width: 700px;
+              margin-left: auto;
+              margin-right: auto;
+              line-height: 1.7;
+            }
+
+            .cta h2 {
+                font-size: 42px;
+               margin-bottom: 20px;
+               font-weight: 700;
+            }
+
+            .btn-apply {
+                background-color: #ffca28;
+                color: #0d47a1;
+                padding: 15px 45px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 18px;
+                display: inline-block;
+                margin-top: 10px;
+                transition: 0.3s;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            }
+
+            .btn-apply:hover {
+                background-color: #ffb300;
+                transform: translateY(-2px);
+            }
+
+             .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 36px;
+            height: 28px;
+            background: rgba(255,255,255,0.18);
+            border: 2px solid #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1001;
+            padding: 6px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .hamburger {
+                display: flex !important;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 80px;
+                right: 20px;
+                width: min(240px, 82vw);
+                background: rgba(10, 42, 102, 0.98);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 18px;
+                gap: 12px;
+                border-radius: 10px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+                z-index: 1000;
+                margin-right: 0;
+            }
+
+            .nav-menu.open {
+                display: flex !important;
+            }
+
+            .nav-menu a {
+                display: block;
+                font-size: 18px;
+                width: 100%;
+                padding: 6px 0;
+                margin-left: 0;
+            }
+        }
+
+
+            .footer {
+                background-color: #0d1b2a;
+                color:white;
+                padding: 50px 20px 20px;
+            }
+
+            .footer-grid {
+                max-width: 1200px;
+                margin: auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                margin-bottom: 30px;
+            }
+
+            .footer h4{
+                margin-bottom: 15px;
+                color:#ffca28;
+            }
+
+            .footer p, .footer a {
+                color: #ddd;
+                text-decoration: none;
+                line-height: 1.6;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                border-top: 1px solid #333;
+                padding-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="logo">
+                <img src="school.png">
+                <h4>LUMORA <br>
+                    INTERNATIONAL
+                    <br> SCHOOL</h4>
+            </div>
+              <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="academics.html">ACADEMICS</a>
+            <a href="admission.html">ADMISSIONS</a>
+            <a href="events.html">EVENTS </a>
+            <a href="contact.html">CONTACT US</a>
+            <a href="login.html">LOGIN</a>
+            <a href="signup.html">SIGNUP</a>
+            </nav>
+        </header>
+
+        <section class="hero" id="home">
+            <h1>Welcome to LUMORA INTERNATIONAL SCHOOL</h1>
+            <p>Education for Excellence, Character for Life</p>
+            <a href="admission.html" class="btn">Admission Open 2026-27</a>
+        </section>
+
+        <div class="container" id="about">
+            <h2 class="section-title">About Our School</h2>
+            <p class="section-sub">Building Bright futures since 2005</p>
+            <div class="about">
+                <img src="https://t4.ftcdn.net/jpg/15/12/04/11/360_F_1512041110_c0NFJDcHLmUJiwfDowzcKUgsPALmbjdD.jpg">
+
+                <div class="about-text">
+                    <h3>Nurturing Young Minds</h3>
+                    <p>Lumora International School is committed to providing quality education with modern facilities and experienced faculty. 
+                        We focus on academic excellence, sports, and extracurricular activities to develop all-round personalities of students.
+                    </p>
+
+                    <p>Our mission is to create responsible citizen who can lead with knowledge, discipline and values</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="features" id="facilities">
+            <h2 class="section-title">Why Choose Us </h2>
+            <p class="section-sub"> We provide the best learning environment for your child</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div style="font-size:40px">Classrooms</div>
+                    <h4>Smart Classes</h4>
+                    <p>Digital learning with smart boards in every classroom</p>
+                </div>
+
+                <div class="feature-card">
+                    <div style="font-size:40px">Sports</div>
+                    <h4>Sports & Games</h4>
+                    <p>Large playgrounds and sports coaching</p>
+                </div>
+
+                <div class="feature-card">
+                    <div style="font-size:40px">Transport</div>
+                    <h4>Transport facilities</h4>
+                    <p>Safe and comfortable school bus services</p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="container" id="classes">
+            <h2 class="section-title">Our Classes</h2>
+            <p class="section-sub">From nursery to class 12th</p>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <img src="https://www.parents.com/thmb/595334Wl0HQnRAxfMv6Fy7bf9ME=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/shutterstock_172261862-2--d36510500ca044e1bd9bb51f798b3141.jpg">
+                    <div class="class-info">
+                        <h4>Primary section</h4>
+                        <p>class 1 to 5 | Focus on basics and creativity</p>
+                    </div>
+                    
+                </div>
+
+               <div class="class-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB1GM375FYAaUjmfwySy_U4rb99Iq4877_WtZ_9Psr1wciYIa2Z3a045c&s=10">
+                <div class="class-info">
+                    <h4>Secondary Section</h4>
+                    <p>class 6 to 10 | Science, Maths, and Computer</p>
+                </div>
+               </div>
+
+               <div class="class-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHU7mQV-b3hczD63HXR6Cv2K1m_I_WYHO9E70J8eM9JoyZbm6B54fxGH4S&s=10">
+                <div class="class-info">
+                    <h4>Senior Secondary</h4>
+                    <p>class 11 to 12 | Science, Commerce, and Arts Streams</p>
+               </div>
+            </div>
+        </div>
+        </div>
+
+        <section class="gallery" id="gallery">
+            <h2 class="section-title">School Gallery</h2>
+            <p class="section-sub">Glimpses of our school life</p>
+            <div class="gallery-grid">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcrITyCzByE37P72v9EORFzkQ8O73kwyeVdAazWs0xooCpiHpX0HbKPpNA&s=10">
+
+                <img src="https://www.bhatnagarinternationalschool.in/images/jan-june-2025-19.jpg">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNNxcb5RugeIsZPtr-RmtOCcd_XoB_q87MHCAzO5-96xi6wNbDDY3KzNur&s=10">
+
+                <img src="https://cdnbbsr.s3waas.gov.in/s3kv035ebbece01136a48092021d6a4894/uploads/bfi_thumb/2025080357-r9pwbqe2bs1qo174kfsv8br2ce7bmsg0ula2n4cj1s.jpeg">
+
+            </div>
+        </section>
+
+        <section class="cta" id="contact">
+            <h2>Admission Open for 2026-27</h2>
+            <p>Give your child the best education experience at our school.Limited Seats Available!</p>
+
+            <a href="contact.html" class="btn" style="background-color: #ffca28; color:#0d47a1">Apply Now</a>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-grid">
+                <div>
+                    <h4>Lumora International School</h4>
+                    <p>123 main road, nagpur, maharashtra, 440037</p>
+                    <p>Contact: +91 1234567890</p>
+                    <p>Email: info@lumora.com</p>
+
+                </div>
+            
+                <div>
+            <h4>Quick Links</h4>
+            <a href="aboutus.html">About Us</a><br>
+            <a href="academics.html">Academics</a><br>
+            <a href="admissions.html">Admissions</a><br>
+            <a href="contact.html">Contact Us</a><br>
+                </div>
+
+                <div>
+                    <h4>Office Hours</h4>
+                    <p>Mon- Sat: 8:00 AM - 3:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 LUMORA INTERNATIONAL SCHOOL. All Rights Reserved.</p>
+                </div>
+        </footer>
+
+        <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (hamburger && navMenu) {
+            const closeMenu = () => {
+                navMenu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            };
+
+            hamburger.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const isOpen = navMenu.classList.toggle('open');
+                hamburger.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMenu();
+                });
+            });
+        }
+    </script>
+   
+    </body>
+</html>
